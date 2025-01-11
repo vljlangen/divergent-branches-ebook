@@ -19,6 +19,13 @@ editor_options:
 
 ---
 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
 <br> <br> <br>
 
 # Esipuhe
@@ -52,7 +59,10 @@ Tämä opas on saatavilla myös
 [englanniksi](https://r-guide-in-english.netlify.app/): this short guide
 is available also [in English](https://r-guide-in-english.netlify.app/).
 
-<br> <br>
+
+\
+
+\
 
 ------------------------------------------------------------------------
 
@@ -66,7 +76,10 @@ Ville Langén is licensed under the [CC BY-SA
 
 ```{js, echo = FALSE}
 title=document.getElementById('header');
-title.innerHTML = title.innerHTML + '<br>' + '<br>' + '<img src="images/pexels-kindelmedia-7651803.jpg" alt="Test Image">'
+title.innerHTML = title.innerHTML + '<br>' + '<br>' + '<img src="images/cover_photo.jpeg" alt="Test Image">' +
+    '<figcaption style="font-size: 0.9em; color: gray; margin-top: 5px;">' + 'Image credit: <a href="https://www.pexels.com/photo/cherry-blossom-tree-932409/" target="_blank">Pexels</a>' + '</figcaption>' + '<br>' + '<br>' + '<p><em>This e-book is available also <a href="https://r-guide-in-english.netlify.app/" target="_blank">in English.</a></em></p>'
+
 ```
+
 
 

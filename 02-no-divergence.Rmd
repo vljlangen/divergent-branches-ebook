@@ -1,21 +1,54 @@
-# Ongelmaton päähaara
 
-Tässä luvussa tarkastelemme yksinkertaista esimerkkiä, jossa kaksi käyttäjää työskentelee päähaarassa ilman ristiriitoja. Näemme, miten muutokset kulkevat loogisesti ja ilman ongelmia Gitin avulla.
+# Ei Git-haaraongelmia
 
-## Tilanne: Remote Main (C0)
+<br><br>
+<img src="images/no-divergence.jpg" alt="Test Image" style="max-width: 100%; height: auto;">
+<figcaption style="font-size: 0.9em; color: gray; margin-top: 5px;">
+    Image credit: <a href="https://www.pexels.com/photo/cheerful-multiethnic-students-having-high-five-with-teacher-5940841/" target="_blank">Pexels</a>
+</figcaption>
+<br><br>
+
+
+Tässä luvussa käsittelemme tilannetta, jossa kaksi tai useampi käyttäjä työskentelee päähaarassa ilman eri päivitysten välisiä divergenssi-ristiriitoja. Esittelen yksinkertaisen työnkulun, jossa käyttäjät tekevät omat muutoksensa ja päivityksensä ilman, että tilanne eskaloituu haaraongelmiksi. 
+
+Tämä on tyypillinen tilanne, kun jokainen muistaa tehdä pull-komennon ennen omia muokkauksiaan, jolloin päähaara pysyy vakaana.
+
+## Vakaa päähaara
+
+\
+
+**Tilanne: Remote Main (C0)**
+
+\
 
 Työ alkaa etähakemistossa olevasta päähaarasta, jossa viimeisin tilanne on commit `C0`.\
 Etähakemistoa kuvaa seuraava kaavio:
 
-![](images/no_divergent_branch_1.png){width="468"}
+![](images/no_divergent_branch_1.png){width="468"}\
 
-## Käyttäjä 1: Pull (C0)
+------------------------------------------------------------------------
+
+\
+
+\
+
+**Käyttäjä 1: Pull (C0)**
+
+\
 
 **Pull**: Käyttäjä 1 lataa uusimmat tiedot etähakemistosta (`C0`) paikalliseen hakemistoonsa.
 
-![](images/no_divergent_branch_2.png){width="450"}
+![](images/no_divergent_branch_2.png){width="450"}\
 
-## Käyttäjä 1: muokkaus ja push (C1)
+------------------------------------------------------------------------
+
+\
+
+\
+
+**Käyttäjä 1: muokkaus ja push (C1)**
+
+\
 
 1.  **Muokkaus**: Käyttäjä 1 muokkaa tiedostoja ja tekee commitin `C1`.
 2.  **Push**: Muutokset päivitetään takaisin etähakemistoon.
@@ -24,9 +57,17 @@ Tilanne etähakemistossa commitin `C1` jälkeen:
 
 ![](images/no_divergent_branch_3.png){width="450"}
 
-<br>
+\
 
-## Käyttäjä 2: Pull (C1)
+------------------------------------------------------------------------
+
+\
+
+\
+
+**Käyttäjä 2: Pull (C1)**
+
+\
 
 **Pull**: Käyttäjä 2 lataa commitin `C1` paikalliseen hakemistoonsa.
 
@@ -34,31 +75,65 @@ Tilanne etähakemistossa commitin `C1` jälkeen:
 
 ![](images/no_divergent_branch_4.png){width="518"}
 
-## Käyttäjä 2: muokkaus ja push (C2)
+\
+
+------------------------------------------------------------------------
+
+\
+
+\
+
+**Käyttäjä 2: muokkaus ja push (C2)**
+
+\
 
 1.  **Muokkaus**: Käyttäjä 2 muokkaa tiedostoja ja tekee commitin `C2`.
 2.  **Push**: Muutokset päivitetään takaisin etähakemistoon.
 
 Tilanne etähakemistossa commitin `C2` jälkeen:
 
-<br>
+\
+
+\
 
 ![](images/no_divergent_branch.png){width="516"}
 
-<br>
+\
+
+------------------------------------------------------------------------
+
+\
 
 ## Yhteenveto
 
 Tässä yksinkertaisessa esimerkissä molemmat käyttäjät työskentelivät päähaarassa ilman ristiriitoja. Jokainen vaihe seuraa loogisesti toistaan: pull → muokkaus → commit → push.
 
-------------------------------------------------------------------------
-
 Seuraavassa luvussa tarkastelemme tilannetta, jossa molemmat käyttäjät muokkaavat commitia `C0` samanaikaisesti. Tämä voi johtaa divergent-haaroihin ja konfliktien ratkaisuun.
 
-<br>
+\
 
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+\
 
-<a property="dct:title" rel="cc:attributionURL" href="https://vldesign.kapsi.fi/r/">R-opas</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="http://www.linkedin.com/in/ville-langen">Ville Langén</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution-ShareAlike 4.0 International<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
+------------------------------------------------------------------------
 
-</p>
+Divergent Git branches - ongelmasta ratkaisuun © 2025 by Ville Langén is licensed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1).
+
+[![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
+
+<!-- ```{js, echo = FALSE} -->
+<!-- document.addEventListener('DOMContentLoaded', function () { -->
+<!--     // Select all <h1> elements with the class "hasAnchor" -->
+<!--     const titles = document.querySelectorAll('h1.hasAnchor'); -->
+
+<!--     titles.forEach(title => { -->
+<!--         // Add the image and content to each <h1> element -->
+<!--         title.innerHTML +=  -->
+<!--             '<br><br><img src="images/cover_photo.jpeg" alt="Test Image">' + -->
+<!--             '<figcaption style="font-size: 0.9em; color: gray; margin-top: 5px;">' + -->
+<!--             'Image credit: <a href="https://www.pexels.com/photo/cherry-blossom-tree-932409/" target="_blank">Pexels</a>' + -->
+<!--             '</figcaption><br><br>' + -->
+<!--             '<p><em>This e-book is available also <a href="https://r-guide-in-english.netlify.app/" target="_blank">in English.</a></em></p>'; -->
+<!--     }); -->
+<!-- }); -->
+<!-- ``` -->
+

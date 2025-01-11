@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="yksi-git-haara-vaiko-monta.html"/>
-
+<link rel="next" href="haarojen-divergenssi.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -85,15 +85,8 @@
 <li class="chapter" data-level="2.2" data-path="yksi-git-haara-vaiko-monta.html"><a href="yksi-git-haara-vaiko-monta.html#akateeminen-gitin-käyttö"><i class="fa fa-check"></i><b>2.2</b> “Akateeminen” Gitin käyttö</a></li>
 <li class="chapter" data-level="2.3" data-path="yksi-git-haara-vaiko-monta.html"><a href="yksi-git-haara-vaiko-monta.html#yhteenveto"><i class="fa fa-check"></i><b>2.3</b> Yhteenveto</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html"><i class="fa fa-check"></i><b>3</b> Ongelmaton päähaara</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#tilanne-remote-main-c0"><i class="fa fa-check"></i><b>3.1</b> Tilanne: Remote Main (C0)</a></li>
-<li class="chapter" data-level="3.2" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-1-pull-c0"><i class="fa fa-check"></i><b>3.2</b> Käyttäjä 1: Pull (C0)</a></li>
-<li class="chapter" data-level="3.3" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-1-muokkaus-ja-push-c1"><i class="fa fa-check"></i><b>3.3</b> Käyttäjä 1: muokkaus ja push (C1)</a></li>
-<li class="chapter" data-level="3.4" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-2-pull-c1"><i class="fa fa-check"></i><b>3.4</b> Käyttäjä 2: Pull (C1)</a></li>
-<li class="chapter" data-level="3.5" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-2-muokkaus-ja-push-c2"><i class="fa fa-check"></i><b>3.5</b> Käyttäjä 2: muokkaus ja push (C2)</a></li>
-<li class="chapter" data-level="3.6" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#yhteenveto-1"><i class="fa fa-check"></i><b>3.6</b> Yhteenveto</a></li>
-</ul></li>
+<li class="chapter" data-level="3" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html"><i class="fa fa-check"></i><b>3</b> Ongelmaton päähaara</a></li>
+<li class="chapter" data-level="4" data-path="haarojen-divergenssi.html"><a href="haarojen-divergenssi.html"><i class="fa fa-check"></i><b>4</b> Haarojen divergenssi</a></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org/">Proudly published with bookdown</a></li>
 
@@ -117,19 +110,25 @@
 <div id="ongelmaton-päähaara" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">3</span> Ongelmaton päähaara<a href="ongelmaton-päähaara.html#ongelmaton-päähaara" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Tässä luvussa tarkastelemme yksinkertaista esimerkkiä, jossa kaksi käyttäjää työskentelee päähaarassa ilman ristiriitoja. Näemme, miten muutokset kulkevat loogisesti ja ilman ongelmia Gitin avulla.</p>
-<div id="tilanne-remote-main-c0" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Tilanne: Remote Main (C0)<a href="ongelmaton-päähaara.html#tilanne-remote-main-c0" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><br />
+</p>
+<p><strong>Tilanne: Remote Main (C0)</strong></p>
+<p><br />
+</p>
 <p>Työ alkaa etähakemistossa olevasta päähaarasta, jossa viimeisin tilanne on commit <code>C0</code>.<br />
 Etähakemistoa kuvaa seuraava kaavio:</p>
-<p><img src="images/no_divergent_branch_1.png" width="468" /></p>
-</div>
-<div id="käyttäjä-1-pull-c0" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Käyttäjä 1: Pull (C0)<a href="ongelmaton-päähaara.html#käyttäjä-1-pull-c0" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="images/no_divergent_branch_1.png" width="468" /><br />
+</p>
+<p><strong>Käyttäjä 1: Pull (C0)</strong></p>
+<p><br />
+</p>
 <p><strong>Pull</strong>: Käyttäjä 1 lataa uusimmat tiedot etähakemistosta (<code>C0</code>) paikalliseen hakemistoonsa.</p>
 <p><img src="images/no_divergent_branch_2.png" width="450" /></p>
-</div>
-<div id="käyttäjä-1-muokkaus-ja-push-c1" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Käyttäjä 1: muokkaus ja push (C1)<a href="ongelmaton-päähaara.html#käyttäjä-1-muokkaus-ja-push-c1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><br />
+</p>
+<p><strong>Käyttäjä 1: muokkaus ja push (C1)</strong></p>
+<p><br />
+</p>
 <ol style="list-style-type: decimal">
 <li><strong>Muokkaus</strong>: Käyttäjä 1 muokkaa tiedostoja ja tekee commitin <code>C1</code>.</li>
 <li><strong>Push</strong>: Muutokset päivitetään takaisin etähakemistoon.</li>
@@ -137,15 +136,19 @@ Etähakemistoa kuvaa seuraava kaavio:</p>
 <p>Tilanne etähakemistossa commitin <code>C1</code> jälkeen:</p>
 <p><img src="images/no_divergent_branch_3.png" width="450" /></p>
 <p><br></p>
-</div>
-<div id="käyttäjä-2-pull-c1" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Käyttäjä 2: Pull (C1)<a href="ongelmaton-päähaara.html#käyttäjä-2-pull-c1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><br />
+</p>
+<p><strong>Käyttäjä 2: Pull (C1)</strong></p>
+<p><br />
+</p>
 <p><strong>Pull</strong>: Käyttäjä 2 lataa commitin <code>C1</code> paikalliseen hakemistoonsa.</p>
 <p><br></p>
 <p><img src="images/no_divergent_branch_4.png" width="518" /></p>
-</div>
-<div id="käyttäjä-2-muokkaus-ja-push-c2" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Käyttäjä 2: muokkaus ja push (C2)<a href="ongelmaton-päähaara.html#käyttäjä-2-muokkaus-ja-push-c2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><br />
+</p>
+<p><strong>Käyttäjä 2: muokkaus ja push (C2)</strong></p>
+<p><br />
+</p>
 <ol style="list-style-type: decimal">
 <li><strong>Muokkaus</strong>: Käyttäjä 2 muokkaa tiedostoja ja tekee commitin <code>C2</code>.</li>
 <li><strong>Push</strong>: Muutokset päivitetään takaisin etähakemistoon.</li>
@@ -154,9 +157,11 @@ Etähakemistoa kuvaa seuraava kaavio:</p>
 <p><br></p>
 <p><img src="images/no_divergent_branch.png" width="516" /></p>
 <p><br></p>
-</div>
-<div id="yhteenveto-1" class="section level2 hasAnchor" number="3.6">
-<h2><span class="header-section-number">3.6</span> Yhteenveto<a href="ongelmaton-päähaara.html#yhteenveto-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><br />
+</p>
+<p><strong>Yhteenveto</strong></p>
+<p><br />
+</p>
 <p>Tässä yksinkertaisessa esimerkissä molemmat käyttäjät työskentelivät päähaarassa ilman ristiriitoja. Jokainen vaihe seuraa loogisesti toistaan: pull → muokkaus → commit → push.</p>
 <hr />
 <p>Seuraavassa luvussa tarkastelemme tilannetta, jossa molemmat käyttäjät muokkaavat commitia <code>C0</code> samanaikaisesti. Tämä voi johtaa divergent-haaroihin ja konfliktien ratkaisuun.</p>
@@ -166,14 +171,13 @@ Etähakemistoa kuvaa seuraava kaavio:</p>
 </p>
 
 </div>
-</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="yksi-git-haara-vaiko-monta.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="yksi-git-haara-vaiko-monta.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="haarojen-divergenssi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

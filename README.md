@@ -1,34 +1,34 @@
-# R-opas  
+# Divergent Git branches - ongelmasta ratkaisuun
 
-## Kuvaus  
-Tämä lyhyt opas ohjeistaa:
-- **R-ohjelmointikielen** asentamisen Macille  
-- **RStudion** asentamisen Macille
-- Yksinkertaisten tilastollisten analyysien tekemisen **R:llä** ja **R Markdownilla**  
+Tervetuloa lukemaan *Divergent Git Branches - ongelmasta ratkaisuun* -e-kirjaa, jossa käydään läpi Gitin haarojen hallintaa ja erityisesti tilanteita, joissa haarat divergoituvat eli menevät erilleen, mikä voi aiheuttaa konflikteja ja ongelmia.
 
-Et tarvitse aiempaa kokemusta tilastollisesta analyysistä tai ohjelmoinnista.
+Tässä e-kirjassa esitetään Gitin käyttöön liittyviä ongelmatilanteita ja niiden ratkaisuja, erityisesti tilanteissa, joissa käyttäjät työskentelevät samassa projektissa ja tekevät ristiriitaisia muutoksia samaan aikaan.
 
----
+## Sisältö
 
-## Verkkosivu  
-Tämä opas on saatavilla myös julkaistuna verkkosivuna:  
-[https://r-guide-in-finnish.netlify.app/](https://r-guide-in-finnish.netlify.app/)  
+- **Johdanto**  
+   Perusteet Gitistä ja haarojen hallinnasta.
+   
+- **Ei Divergenssiä**  
+   Esimerkki tilanteesta, jossa käyttäjät työskentelevät päähaarassa ilman ongelmia.
+   
+- **Haarojen Divergenssi**  
+   Mikä tapahtuu, kun käyttäjät tekevät samanaikaisia muutoksia, jotka johtavat haarojen divergenssiin.
 
----
+- **Ratkaisumenetelmät**  
+   Eri menetelmät, joilla konfliktit voidaan ratkaista, kuten siirtäminen toiseen hakemistoon ja normaalin commitin tekeminen.
 
-## Muut Versiot  
-Tämä opas on saatavilla myös **englanniksi**. Pääset englanninkieliseen versioon painamalla [tästä](https://r-guide-in-english.netlify.app/).  
+- **Pysyvä Ratkaisu: Kloonaaminen**  
+   Miten kloonata koko projekti uudelleen etähakemistosta, mikä on definitiivinen ratkaisu hankalissa solmutilanteissa.
 
----
+## Projekti ja R Markdown
 
-## Kiitokset  
-Lämpimät kiitokset **Dr. Joonatan Palmu**:lle tämän oppaan oikolukemisesta sekä versionhallintaa käsittelevän liitteen kirjoittamisesta.  
+Tämä projekti on luotu käyttäen [Bookdown](https://bookdown.org/) -työkalua, joka mahdollistaa helposti moniosaisen ja interaktiivisen e-kirjan luomisen R Markdownilla. Tämä projekti on tarkoitettu kaikille, jotka haluavat oppia Gitin käytön perusteet ja sen haasteet, erityisesti haarojen kanssa työskentelyyn.
+ 
+ ## Lisenssi
 
----
+Tämä projekti on lisensoitu [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) -lisenssillä.
 
-## Lisenssi  
-Tämä opas on jaettu MIT-lisenssillä. Voit jakaa ja muokata sitä vapaasti.
+Divergent Git branches - ongelmasta ratkaisuun © 2025 Ville Langén
 
----
-
-Mukavia koodaushetkiä! 🎉  
+[![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
