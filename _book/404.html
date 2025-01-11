@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Workflow R:llä työskennellessä | Divergent Git branches - ongelmasta ratkaisuun</title>
+  <title>Page not found | Divergent Git branches - ongelmasta ratkaisuun</title>
   <meta name="description" content="Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Workflow R:llä työskennellessä | Divergent Git branches - ongelmasta ratkaisuun" />
+  <meta property="og:title" content="Page not found | Divergent Git branches - ongelmasta ratkaisuun" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Workflow R:llä työskennellessä | Divergent Git branches - ongelmasta ratkaisuun" />
+  <meta name="twitter:title" content="Page not found | Divergent Git branches - ongelmasta ratkaisuun" />
   
   <meta name="twitter:description" content="Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä." />
   
@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="yksi-git-haara-vaiko-monta.html"/>
+
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -85,7 +85,15 @@
 <li class="chapter" data-level="2.2" data-path="yksi-git-haara-vaiko-monta.html"><a href="yksi-git-haara-vaiko-monta.html#akateeminen-gitin-käyttö"><i class="fa fa-check"></i><b>2.2</b> “Akateeminen” Gitin käyttö</a></li>
 <li class="chapter" data-level="2.3" data-path="yksi-git-haara-vaiko-monta.html"><a href="yksi-git-haara-vaiko-monta.html#yhteenveto"><i class="fa fa-check"></i><b>2.3</b> Yhteenveto</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="workflow-rllä-työskennellessä.html"><a href="workflow-rllä-työskennellessä.html"><i class="fa fa-check"></i><b>3</b> Workflow R:llä työskennellessä</a></li>
+<li class="chapter" data-level="3" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html"><i class="fa fa-check"></i><b>3</b> Ongelmaton päähaara</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#tilanne-remote-main-c0"><i class="fa fa-check"></i><b>3.1</b> Tilanne: Remote Main (C0)</a></li>
+<li class="chapter" data-level="3.2" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-1-pull-c0"><i class="fa fa-check"></i><b>3.2</b> Käyttäjä 1: Pull (C0)</a></li>
+<li class="chapter" data-level="3.3" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-1-muokkaus-ja-push-c1"><i class="fa fa-check"></i><b>3.3</b> Käyttäjä 1: muokkaus ja push (C1)</a></li>
+<li class="chapter" data-level="3.4" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-2-pull-c1"><i class="fa fa-check"></i><b>3.4</b> Käyttäjä 2: Pull (C1)</a></li>
+<li class="chapter" data-level="3.5" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-2-muokkaus-ja-push-c2"><i class="fa fa-check"></i><b>3.5</b> Käyttäjä 2: muokkaus ja push (C2)</a></li>
+<li class="chapter" data-level="3.6" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#yhteenveto-1"><i class="fa fa-check"></i><b>3.6</b> Yhteenveto</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org/">Proudly published with bookdown</a></li>
 
@@ -106,30 +114,18 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="workflow-rllä-työskennellessä" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">3</span> Workflow R:llä työskennellessä<a href="workflow-rllä-työskennellessä.html#workflow-rllä-työskennellessä" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>R:llä työskennellessä workflow kulkee usein seuraavasti:</p>
-<ol style="list-style-type: decimal">
-<li>tutkimusdata valmistellaan “paljailla” R-skripteillä</li>
-<li>tilastoajot tehdään sitten suoraan R Markdown -dokumentissa</li>
-</ol>
-<p>Workflow’n jako R-skripteihin ja R Markdown -dokumentteihin on toki täysin vapaata ja yksilöllistä - toiset tekevät kaiken tai lähes kaiken suoraan R Markdown -dokumenteissa, toiset taas tekevät vain varsinaiset tilastoanalyysit ja visualisoinnit R Markdownin puolella.</p>
-<p>Voit kysellä, että mitä hyötyä on ajaa tilastoajot R Markdown -dokumentissa. Vastaan seuraavasti.</p>
-<p>Kuvittele tilannetta, jossa kirjoittaisit MS Wordilla kollegoillesi raporttia, jossa olisi tekstin ohella useita taulukoita ja kuvaajia. Jos tutkimustyön ohjaajasi huomaisi jonkun virheen ja pyytäisi sinua korjaamaan dataasi, sinun pitäisi korjausten jälkeen yksi kerrallaan ladata uudet taulukot ja kuvaajat MS Word -dokumenttiin. (Toim. huom.: “Been there, done that… 😭”) R Markdown -dokumentissa tälle ei ole tarvetta: taulukot ja kuvaajat päivittyvät automaattisesti, jos muutat jotakin datassasi.</p>
-<p>Halutessasi voit milloin vain sementoida R Markdownilla kirjoittamasi tekstin kuvaajineen valmiiksi ja jakaa sen vaikka juuri MS Word -muodossa kollegoillesi - tai PDF:nä.</p>
-<p>Kolmas vaihtoehto on tehdä kuten tein tämän tekstin kanssa, jota juuri luet todennäköisesti web-muodossa: päätin kääntää sen HTML:ksi, jotta sain tehtyä tästä pikaoppaasta verkkosivut.</p>
-<br>
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-<a property="dct:title" rel="cc:attributionURL" href="https://vldesign.kapsi.fi/r/">R-opas</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="http://www.linkedin.com/in/ville-langen">Ville Langén</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution-ShareAlike 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a>
-</p>
-
+<div id="page-not-found" class="section level1">
+<h1>Page not found</h1>
+<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
+<p>You may want to try searching to find the page's new location, or use
+the table of contents to find the page you are looking for.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="yksi-git-haara-vaiko-monta.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
 
     </div>
   </div>
