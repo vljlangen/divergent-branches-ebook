@@ -9,21 +9,21 @@ Tässä e-kirjassa esitetään Gitin käyttöön liittyviä ongelmatilanteita ja
 - **Johdanto**  
    Perusteet Gitistä ja haarojen hallinnasta.
    
-- **Ei Divergenssiä**  
+- **Ei divergenssiä**  
    Esimerkki tilanteesta, jossa käyttäjät työskentelevät päähaarassa ilman ongelmia.
    
-- **Haarojen Divergenssi**  
+- **Haarojen divergenssi**  
    Mikä tapahtuu, kun käyttäjät tekevät samanaikaisia muutoksia, jotka johtavat haarojen divergenssiin.
 
 - **Ratkaisumenetelmät**  
    Eri menetelmät, joilla konfliktit voidaan ratkaista, kuten siirtäminen toiseen hakemistoon ja normaalin commitin tekeminen.
 
-- **Pysyvä Ratkaisu: Kloonaaminen**  
+- **Viimeinen metodi: kloonaaminen**  
    Miten kloonata koko projekti uudelleen etähakemistosta, mikä on definitiivinen ratkaisu hankalissa solmutilanteissa.
 
 ## Projekti ja R Markdown
 
-Tämä projekti on luotu käyttäen [Bookdown](https://bookdown.org/) -työkalua, joka mahdollistaa helposti moniosaisen ja interaktiivisen e-kirjan luomisen R Markdownilla. Tämä projekti on tarkoitettu kaikille, jotka haluavat oppia Gitin käytön perusteet ja sen haasteet, erityisesti haarojen kanssa työskentelyyn.
+Tämä projekti on luotu käyttäen [Bookdown](https://bookdown.org/)-työkalua, joka mahdollistaa helposti moniosaisen ja interaktiivisen e-kirjan luomisen R Markdownilla. Tämä projekti on tarkoitettu kaikille, jotka haluavat oppia Gitin käytön perusteet ja sen haasteet, erityisesti haarojen kanssa työskentelyyn.
  
  ## Lisenssi
 
