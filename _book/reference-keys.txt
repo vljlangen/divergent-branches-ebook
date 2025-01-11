@@ -1,0 +1,14 @@
+esipuhe
+kenelle-tämä-kirja-on-tarkoitettu
+rakenne
+yksi-git-haara-vaiko-monta
+ohjelmistokehityksen-git-haarat
+akateeminen-gitin-käyttö
+yhteenveto
+ongelmaton-päähaara
+tilanne-remote-main-c0
+käyttäjä-1-pull-c0
+käyttäjä-1-muokkaus-ja-push-c1
+käyttäjä-2-pull-c1
+käyttäjä-2-muokkaus-ja-push-c2
+yhteenveto-1

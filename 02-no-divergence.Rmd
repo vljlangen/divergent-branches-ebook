@@ -1,0 +1,64 @@
+# Ongelmaton päähaara
+
+Tässä luvussa tarkastelemme yksinkertaista esimerkkiä, jossa kaksi käyttäjää työskentelee päähaarassa ilman ristiriitoja. Näemme, miten muutokset kulkevat loogisesti ja ilman ongelmia Gitin avulla.
+
+## Tilanne: Remote Main (C0)
+
+Työ alkaa etähakemistossa olevasta päähaarasta, jossa viimeisin tilanne on commit `C0`.\
+Etähakemistoa kuvaa seuraava kaavio:
+
+![](images/no_divergent_branch_1.png){width="468"}
+
+## Käyttäjä 1: Pull (C0)
+
+**Pull**: Käyttäjä 1 lataa uusimmat tiedot etähakemistosta (`C0`) paikalliseen hakemistoonsa.
+
+![](images/no_divergent_branch_2.png){width="450"}
+
+## Käyttäjä 1: muokkaus ja push (C1)
+
+1.  **Muokkaus**: Käyttäjä 1 muokkaa tiedostoja ja tekee commitin `C1`.
+2.  **Push**: Muutokset päivitetään takaisin etähakemistoon.
+
+Tilanne etähakemistossa commitin `C1` jälkeen:
+
+![](images/no_divergent_branch_3.png){width="450"}
+
+<br>
+
+## Käyttäjä 2: Pull (C1)
+
+**Pull**: Käyttäjä 2 lataa commitin `C1` paikalliseen hakemistoonsa.
+
+<br>
+
+![](images/no_divergent_branch_4.png){width="518"}
+
+## Käyttäjä 2: muokkaus ja push (C2)
+
+1.  **Muokkaus**: Käyttäjä 2 muokkaa tiedostoja ja tekee commitin `C2`.
+2.  **Push**: Muutokset päivitetään takaisin etähakemistoon.
+
+Tilanne etähakemistossa commitin `C2` jälkeen:
+
+<br>
+
+![](images/no_divergent_branch.png){width="516"}
+
+<br>
+
+## Yhteenveto
+
+Tässä yksinkertaisessa esimerkissä molemmat käyttäjät työskentelivät päähaarassa ilman ristiriitoja. Jokainen vaihe seuraa loogisesti toistaan: pull → muokkaus → commit → push.
+
+------------------------------------------------------------------------
+
+Seuraavassa luvussa tarkastelemme tilannetta, jossa molemmat käyttäjät muokkaavat commitia `C0` samanaikaisesti. Tämä voi johtaa divergent-haaroihin ja konfliktien ratkaisuun.
+
+<br>
+
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+
+<a property="dct:title" rel="cc:attributionURL" href="https://vldesign.kapsi.fi/r/">R-opas</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="http://www.linkedin.com/in/ville-langen">Ville Langén</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution-ShareAlike 4.0 International<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
+
+</p>

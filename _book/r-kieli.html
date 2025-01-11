@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 R-kieli | Divergent branches -ongelman ratkaiseminen Git-projekteissa</title>
+  <meta name="description" content="Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 R-kieli | Divergent branches -ongelman ratkaiseminen Git-projekteissa" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 R-kieli | Divergent branches -ongelman ratkaiseminen Git-projekteissa" />
+  
+  <meta name="twitter:description" content="Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä." />
+  
+
+<meta name="author" content="Ville Langén" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="erot-ohjelmistokehityksen-ja-akateemisten-työryhmien-välillä.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://r-guide-in-english.netlify.app/"><i class="fa fa-language fa-fw"></i> English version<span></span></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Esipuhe</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tavoite"><i class="fa fa-check"></i><b>1.1</b> Tavoite</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#kenelle-tämä-kirja-on-tarkoitettu"><i class="fa fa-check"></i><b>1.2</b> Kenelle tämä kirja on tarkoitettu?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#rakenne"><i class="fa fa-check"></i><b>1.3</b> Rakenne</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-kieli.html"><a href="r-kieli.html"><i class="fa fa-check"></i><b>2</b> R-kieli</a></li>
+<li class="chapter" data-level="3" data-path="erot-ohjelmistokehityksen-ja-akateemisten-työryhmien-välillä.html"><a href="erot-ohjelmistokehityksen-ja-akateemisten-työryhmien-välillä.html"><i class="fa fa-check"></i><b>3</b> Erot ohjelmistokehityksen ja akateemisten työryhmien välillä</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="erot-ohjelmistokehityksen-ja-akateemisten-työryhmien-välillä.html"><a href="erot-ohjelmistokehityksen-ja-akateemisten-työryhmien-välillä.html#ohjelmistokehityksen-työryhmät"><i class="fa fa-check"></i><b>3.1</b> Ohjelmistokehityksen työryhmät</a></li>
+<li class="chapter" data-level="3.2" data-path="erot-ohjelmistokehityksen-ja-akateemisten-työryhmien-välillä.html"><a href="erot-ohjelmistokehityksen-ja-akateemisten-työryhmien-välillä.html#akateemisten-työryhmien-haasteet"><i class="fa fa-check"></i><b>3.2</b> Akateemisten työryhmien haasteet</a></li>
+<li class="chapter" data-level="3.3" data-path="erot-ohjelmistokehityksen-ja-akateemisten-työryhmien-välillä.html"><a href="erot-ohjelmistokehityksen-ja-akateemisten-työryhmien-välillä.html#yhteenveto"><i class="fa fa-check"></i><b>3.3</b> Yhteenveto</a></li>
+<li class="chapter" data-level="3.4" data-path="erot-ohjelmistokehityksen-ja-akateemisten-työryhmien-välillä.html"><a href="erot-ohjelmistokehityksen-ja-akateemisten-työryhmien-välillä.html#section"><i class="fa fa-check"></i><b>3.4</b> <br></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="workflow-rllä-työskennellessä.html"><a href="workflow-rllä-työskennellessä.html"><i class="fa fa-check"></i><b>4</b> Workflow R:llä työskennellessä</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org/">Proudly published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Divergent branches -ongelman ratkaiseminen Git-projekteissa</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-kieli" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> R-kieli<a href="r-kieli.html#r-kieli" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>R</strong> on ohjelmointikieli, jonka saa asennettua tietokoneelleen <strong>ilmaiseksi</strong> ja jolla saa tehtyä <strong>paitsi tilastoajot myös kuvaajat</strong> tieteellistä artikkelia laadittaessa.</p>
+<p>Jos tutkijan valinta on vapaa, rohkenen suositella, että aloitteleva tutkija aloittaa nykyään suoraan R:stä. Vaikka osaisi jo esim. SASia tai SPSS:ää, R:ää kannattaa opetella hieman jo pelkästään kuvaajien tekoa varten.</p>
+<p>R:n etuja:</p>
+<ol style="list-style-type: decimal">
+<li>ilmainen</li>
+<li>asennus helppoa</li>
+<li>kevyt - vie vähän tilaa tietokoneelta</li>
+<li>käyttöapua saa nopeasti ja helposti internetistä</li>
+<li>kuvaajien tekoon erinomainen</li>
+<li>yksinäänkin riittää tavanomaisen väitöskirjan analyyseihin</li>
+</ol>
+<p>Ihan “karvalakkina” koodattava R-kieli (ns. Base-R) on mielestäni hieman luotaantyötävää.</p>
+<p>Mutta kun R-kieltä laaditaan lisäosan, ns. <em>dplyr</em>-paketin kanssa, koodia on hyvin helppo aloittelijankin tehdä ja koodin ymmärtäminen on intuitiivista.</p>
+<p>Tässä pikaohjeessa pyritään tekemään kaikki mahdollinen <em>dplyr</em>-paketin kanssa. <em>dplyr:ista</em> paljon lisää tuonnempana.</p>
+<br>
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+<a property="dct:title" rel="cc:attributionURL" href="https://vldesign.kapsi.fi/r/">R-opas</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="http://www.linkedin.com/in/ville-langen">Ville Langén</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution-ShareAlike 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a>
+</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="erot-ohjelmistokehityksen-ja-akateemisten-työryhmien-välillä.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

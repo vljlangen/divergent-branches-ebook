@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Ongelmaton päähaara | Divergent Git branches - ongelmasta ratkaisuun</title>
+  <meta name="description" content="Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Ongelmaton päähaara | Divergent Git branches - ongelmasta ratkaisuun" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Ongelmaton päähaara | Divergent Git branches - ongelmasta ratkaisuun" />
+  
+  <meta name="twitter:description" content="Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä." />
+  
+
+<meta name="author" content="Ville Langén" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="yksi-git-haara-vaiko-monta.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://r-guide-in-english.netlify.app/"><i class="fa fa-language fa-fw"></i> English version<span></span></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Esipuhe</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#kenelle-tämä-kirja-on-tarkoitettu"><i class="fa fa-check"></i><b>1.1</b> Kenelle tämä kirja on tarkoitettu?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#rakenne"><i class="fa fa-check"></i><b>1.2</b> Rakenne</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="yksi-git-haara-vaiko-monta.html"><a href="yksi-git-haara-vaiko-monta.html"><i class="fa fa-check"></i><b>2</b> Yksi Git-haara vaiko monta?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="yksi-git-haara-vaiko-monta.html"><a href="yksi-git-haara-vaiko-monta.html#ohjelmistokehityksen-git-haarat"><i class="fa fa-check"></i><b>2.1</b> Ohjelmistokehityksen Git-haarat</a></li>
+<li class="chapter" data-level="2.2" data-path="yksi-git-haara-vaiko-monta.html"><a href="yksi-git-haara-vaiko-monta.html#akateeminen-gitin-käyttö"><i class="fa fa-check"></i><b>2.2</b> “Akateeminen” Gitin käyttö</a></li>
+<li class="chapter" data-level="2.3" data-path="yksi-git-haara-vaiko-monta.html"><a href="yksi-git-haara-vaiko-monta.html#yhteenveto"><i class="fa fa-check"></i><b>2.3</b> Yhteenveto</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html"><i class="fa fa-check"></i><b>3</b> Ongelmaton päähaara</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#tilanne-remote-main-c0"><i class="fa fa-check"></i><b>3.1</b> Tilanne: Remote Main (C0)</a></li>
+<li class="chapter" data-level="3.2" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-1-pull-c0"><i class="fa fa-check"></i><b>3.2</b> Käyttäjä 1: Pull (C0)</a></li>
+<li class="chapter" data-level="3.3" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-1-muokkaus-ja-push-c1"><i class="fa fa-check"></i><b>3.3</b> Käyttäjä 1: muokkaus ja push (C1)</a></li>
+<li class="chapter" data-level="3.4" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-2-pull-c1"><i class="fa fa-check"></i><b>3.4</b> Käyttäjä 2: Pull (C1)</a></li>
+<li class="chapter" data-level="3.5" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-2-muokkaus-ja-push-c2"><i class="fa fa-check"></i><b>3.5</b> Käyttäjä 2: muokkaus ja push (C2)</a></li>
+<li class="chapter" data-level="3.6" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#yhteenveto-1"><i class="fa fa-check"></i><b>3.6</b> Yhteenveto</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org/">Proudly published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Divergent Git branches - ongelmasta ratkaisuun</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ongelmaton-päähaara" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Ongelmaton päähaara<a href="ongelmaton-päähaara.html#ongelmaton-päähaara" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Tässä luvussa tarkastelemme yksinkertaista esimerkkiä, jossa kaksi käyttäjää työskentelee päähaarassa ilman ristiriitoja. Näemme, miten muutokset kulkevat loogisesti ja ilman ongelmia Gitin avulla.</p>
+<div id="tilanne-remote-main-c0" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Tilanne: Remote Main (C0)<a href="ongelmaton-päähaara.html#tilanne-remote-main-c0" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Työ alkaa etähakemistossa olevasta päähaarasta, jossa viimeisin tilanne on commit <code>C0</code>.<br />
+Etähakemistoa kuvaa seuraava kaavio:</p>
+<p><img src="images/no_divergent_branch_1.png" width="468" /></p>
+</div>
+<div id="käyttäjä-1-pull-c0" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Käyttäjä 1: Pull (C0)<a href="ongelmaton-päähaara.html#käyttäjä-1-pull-c0" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Pull</strong>: Käyttäjä 1 lataa uusimmat tiedot etähakemistosta (<code>C0</code>) paikalliseen hakemistoonsa.</p>
+<p><img src="images/no_divergent_branch_2.png" width="450" /></p>
+</div>
+<div id="käyttäjä-1-muokkaus-ja-push-c1" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Käyttäjä 1: muokkaus ja push (C1)<a href="ongelmaton-päähaara.html#käyttäjä-1-muokkaus-ja-push-c1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><strong>Muokkaus</strong>: Käyttäjä 1 muokkaa tiedostoja ja tekee commitin <code>C1</code>.</li>
+<li><strong>Push</strong>: Muutokset päivitetään takaisin etähakemistoon.</li>
+</ol>
+<p>Tilanne etähakemistossa commitin <code>C1</code> jälkeen:</p>
+<p><img src="images/no_divergent_branch_3.png" width="450" /></p>
+<p><br></p>
+</div>
+<div id="käyttäjä-2-pull-c1" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Käyttäjä 2: Pull (C1)<a href="ongelmaton-päähaara.html#käyttäjä-2-pull-c1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Pull</strong>: Käyttäjä 2 lataa commitin <code>C1</code> paikalliseen hakemistoonsa.</p>
+<p><br></p>
+<p><img src="images/no_divergent_branch_4.png" width="518" /></p>
+</div>
+<div id="käyttäjä-2-muokkaus-ja-push-c2" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Käyttäjä 2: muokkaus ja push (C2)<a href="ongelmaton-päähaara.html#käyttäjä-2-muokkaus-ja-push-c2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><strong>Muokkaus</strong>: Käyttäjä 2 muokkaa tiedostoja ja tekee commitin <code>C2</code>.</li>
+<li><strong>Push</strong>: Muutokset päivitetään takaisin etähakemistoon.</li>
+</ol>
+<p>Tilanne etähakemistossa commitin <code>C2</code> jälkeen:</p>
+<p><br></p>
+<p><img src="images/no_divergent_branch.png" width="516" /></p>
+<p><br></p>
+</div>
+<div id="yhteenveto-1" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Yhteenveto<a href="ongelmaton-päähaara.html#yhteenveto-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tässä yksinkertaisessa esimerkissä molemmat käyttäjät työskentelivät päähaarassa ilman ristiriitoja. Jokainen vaihe seuraa loogisesti toistaan: pull → muokkaus → commit → push.</p>
+<hr />
+<p>Seuraavassa luvussa tarkastelemme tilannetta, jossa molemmat käyttäjät muokkaavat commitia <code>C0</code> samanaikaisesti. Tämä voi johtaa divergent-haaroihin ja konfliktien ratkaisuun.</p>
+<p><br></p>
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+<p><a property="dct:title" rel="cc:attributionURL" href="https://vldesign.kapsi.fi/r/">R-opas</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="http://www.linkedin.com/in/ville-langen">Ville Langén</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution-ShareAlike 4.0 International<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a></p>
+</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="yksi-git-haara-vaiko-monta.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

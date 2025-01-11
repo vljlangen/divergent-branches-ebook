@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Divergent Git branches - ongelmasta ratkaisuun</title>
+  <meta name="description" content="Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Divergent Git branches - ongelmasta ratkaisuun" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Divergent Git branches - ongelmasta ratkaisuun" />
+  
+  <meta name="twitter:description" content="Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä." />
+  
+
+<meta name="author" content="Ville Langén" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="yksi-git-haara-vaiko-monta.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://r-guide-in-english.netlify.app/"><i class="fa fa-language fa-fw"></i> English version<span></span></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Esipuhe</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#kenelle-tämä-kirja-on-tarkoitettu"><i class="fa fa-check"></i><b>1.1</b> Kenelle tämä kirja on tarkoitettu?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#rakenne"><i class="fa fa-check"></i><b>1.2</b> Rakenne</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="yksi-git-haara-vaiko-monta.html"><a href="yksi-git-haara-vaiko-monta.html"><i class="fa fa-check"></i><b>2</b> Yksi Git-haara vaiko monta?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="yksi-git-haara-vaiko-monta.html"><a href="yksi-git-haara-vaiko-monta.html#ohjelmistokehityksen-git-haarat"><i class="fa fa-check"></i><b>2.1</b> Ohjelmistokehityksen Git-haarat</a></li>
+<li class="chapter" data-level="2.2" data-path="yksi-git-haara-vaiko-monta.html"><a href="yksi-git-haara-vaiko-monta.html#akateeminen-gitin-käyttö"><i class="fa fa-check"></i><b>2.2</b> “Akateeminen” Gitin käyttö</a></li>
+<li class="chapter" data-level="2.3" data-path="yksi-git-haara-vaiko-monta.html"><a href="yksi-git-haara-vaiko-monta.html#yhteenveto"><i class="fa fa-check"></i><b>2.3</b> Yhteenveto</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html"><i class="fa fa-check"></i><b>3</b> Ongelmaton päähaara</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#tilanne-remote-main-c0"><i class="fa fa-check"></i><b>3.1</b> Tilanne: Remote Main (C0)</a></li>
+<li class="chapter" data-level="3.2" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-1-pull-c0"><i class="fa fa-check"></i><b>3.2</b> Käyttäjä 1: Pull (C0)</a></li>
+<li class="chapter" data-level="3.3" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-1-muokkaus-ja-push-c1"><i class="fa fa-check"></i><b>3.3</b> Käyttäjä 1: muokkaus ja push (C1)</a></li>
+<li class="chapter" data-level="3.4" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-2-pull-c1"><i class="fa fa-check"></i><b>3.4</b> Käyttäjä 2: Pull (C1)</a></li>
+<li class="chapter" data-level="3.5" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#käyttäjä-2-muokkaus-ja-push-c2"><i class="fa fa-check"></i><b>3.5</b> Käyttäjä 2: muokkaus ja push (C2)</a></li>
+<li class="chapter" data-level="3.6" data-path="ongelmaton-päähaara.html"><a href="ongelmaton-päähaara.html#yhteenveto-1"><i class="fa fa-check"></i><b>3.6</b> Yhteenveto</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org/">Proudly published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Divergent Git branches - ongelmasta ratkaisuun</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Divergent Git branches - ongelmasta ratkaisuun</h1>
+<p class="author"><em>Ville Langén</em></p>
+<p class="date"><em>11.01.2025</em></p>
+</div>
+<div id="esipuhe" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Esipuhe<a href="index.html#esipuhe" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Tässä e-kirjassa esittelen, kuinka Gitin haarojen erkaantuminen eli <em>divergent branches</em> -ongelma on helposti ratkaistavissa pienissä Git-projekteissa, joissa tavoitteena on toimia pääasiassa lähinnä yhden saman päähaaran sisällä.</p>
+<div id="kenelle-tämä-kirja-on-tarkoitettu" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Kenelle tämä kirja on tarkoitettu?<a href="index.html#kenelle-tämä-kirja-on-tarkoitettu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tämä kirja on suunnattu tutkijoille, datatieteilijöille ja
+ohjelmoijille, jotka käyttävät Gitiä tieteellisissä projekteissaan ja
+haluavat syventää osaamistaan haarojen hallinnasta.</p>
+</div>
+<div id="rakenne" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Rakenne<a href="index.html#rakenne" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kirja on jaettu kolmeen osaan: 1. <strong>Perusteet</strong>: Gitin toiminnan ja
+haarautumisen ymmärtäminen. 2. <strong>Menetelmät divergent-haarojen
+hallintaan</strong>: - Menetelmä 1: Tiedoston siirto ja pakotettu päivitys. -
+Menetelmä 2: Tiedoston uudelleennimeäminen ja hakeminen. - Menetelmä 3:
+Manuaalinen konfliktien ratkaisu yhdistämisen yhteydessä. 3. <strong>Käytännön
+vinkit ja parhaat käytännöt</strong>: Esimerkkejä ja vinkkejä
+tutkimusprojekteihin.</p>
+<hr />
+<p>Seuraavassa luvussa sukellamme Gitin perusteisiin ja sen toimintaan
+haarautumisessa.</p>
+<p><br></p>
+<p>Tämä opas on saatavilla myös
+<a href="https://r-guide-in-english.netlify.app/">englanniksi</a>: this short guide
+is available also <a href="https://r-guide-in-english.netlify.app/">in English</a>.</p>
+<p><br> <br></p>
+<hr />
+<p>Divergent Git branches - ongelmasta ratkaisuun © 2025 by
+Ville Langén is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1">CC BY-SA
+4.0</a>.</p>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" alt="CC BY-SA 4.0" /></a></p>
+<script>
+title=document.getElementById('header');
+title.innerHTML = title.innerHTML + '<br>' + '<br>' + '<img src="images/pexels-kindelmedia-7651803.jpg" alt="Test Image">'
+</script>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="yksi-git-haara-vaiko-monta.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+---
+title: "Divergent Git branches - ongelmasta ratkaisuun"
+documentclass: book
+output:
+  bookdown::gitbook:
+    config:
+      toc:
+        scroll_highlight: yes
+        before: |
+          <li><a href="https://r-guide-in-english.netlify.app/"><i class="fa fa-language fa-fw"></i> English version<span></span></a></li>
+        after: |
+          <li><a href="https://bookdown.org/">Proudly published with bookdown</a></li>
+author: Ville Langén
+date: "`r format(Sys.time(), '%d.%m.%Y')`"
+description: "Opas Gitin käyttöön tieteellisissä projekteissa, joissa keskitytään toimimaan yhden päähaaran sisällä."
+editor_options: 
+  markdown: 
+    wrap: 72
+
+---
+
+<br> <br> <br>
+
+# Esipuhe
+
+Tässä e-kirjassa esittelen, kuinka Gitin haarojen erkaantuminen eli *divergent branches* -ongelma on helposti ratkaistavissa pienissä Git-projekteissa, joissa tavoitteena on toimia pääasiassa lähinnä yhden saman päähaaran sisällä.
+
+## Kenelle tämä kirja on tarkoitettu?
+
+Tämä kirja on suunnattu tutkijoille, datatieteilijöille ja
+ohjelmoijille, jotka käyttävät Gitiä tieteellisissä projekteissaan ja
+haluavat syventää osaamistaan haarojen hallinnasta.
+
+## Rakenne
+
+Kirja on jaettu kolmeen osaan: 1. **Perusteet**: Gitin toiminnan ja
+haarautumisen ymmärtäminen. 2. **Menetelmät divergent-haarojen
+hallintaan**: - Menetelmä 1: Tiedoston siirto ja pakotettu päivitys. -
+Menetelmä 2: Tiedoston uudelleennimeäminen ja hakeminen. - Menetelmä 3:
+Manuaalinen konfliktien ratkaisu yhdistämisen yhteydessä. 3. **Käytännön
+vinkit ja parhaat käytännöt**: Esimerkkejä ja vinkkejä
+tutkimusprojekteihin.
+
+------------------------------------------------------------------------
+
+Seuraavassa luvussa sukellamme Gitin perusteisiin ja sen toimintaan
+haarautumisessa.
+
+<br>
+
+Tämä opas on saatavilla myös
+[englanniksi](https://r-guide-in-english.netlify.app/): this short guide
+is available also [in English](https://r-guide-in-english.netlify.app/).
+
+<br> <br>
+
+------------------------------------------------------------------------
+
+Divergent Git branches - ongelmasta ratkaisuun © 2025 by
+Ville Langén is licensed under the [CC BY-SA
+4.0](https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1).
+
+[![CC BY-SA
+4.0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
+
+
+```{js, echo = FALSE}
+title=document.getElementById('header');
+title.innerHTML = title.innerHTML + '<br>' + '<br>' + '<img src="images/pexels-kindelmedia-7651803.jpg" alt="Test Image">'
+```
+
+
